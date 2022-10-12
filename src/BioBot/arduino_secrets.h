@@ -1,0 +1,2 @@
+#define SECRET_SSID "UMASS-DEVICES"
+#define SECRET_PASS "GoUMass!"
