@@ -45,7 +45,7 @@ void setup() {
   handler.init();
   thermostat.init();
   handler.setCycleOnOff(1);
-  //lcd.init();
+  lcd.init();
   lcd.input(handler);
   pinMode(LED_BUILTIN, OUTPUT); // LED pin as output
 }
