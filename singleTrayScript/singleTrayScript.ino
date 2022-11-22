@@ -11,7 +11,6 @@
 #define CLK 0
 #define DT 1
 
-
 const int motor = 10; //LED connected to digital pin 10
 const int tPin = 14;
 const int heatPin = 7;
