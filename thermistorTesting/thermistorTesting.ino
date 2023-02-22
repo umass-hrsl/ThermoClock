@@ -1,26 +1,21 @@
 // the value of the 'other' resistor
-#define SERIESRESISTOR 1000    
+float resistor = 100000.0;
+float Vin = 5.0;
+   
  
 // What pin to connect the sensor to
-#define THERMISTORPIN A0 
+#define tempPin A0 
  
-void setup(void) {
+void setup() {
   Serial.begin(9600);
+  pinMode(tempPin, INPUT);
 }
  
-void loop(void) {
-  float reading;
- 
-  reading = analogRead(THERMISTORPIN);
- 
-  Serial.print("Analog reading "); 
-  Serial.println(reading);
- 
-  // convert the value to resistance
-  reading = (1023 / reading)  - 1;     // (1023/ADC - 1) 
-  reading = SERIESRESISTOR / reading;  // 10K / (1023/ADC - 1)
-  Serial.print("Thermistor resistance "); 
-  Serial.println(reading);
- 
-  delay(1000);
+void loop() {
+  float reading = analogRead(tempPin);
+  float voltage = reading * (Vin/1023.0);
+  float rt = ((Vin*resistor)/voltage) - resistor;
+  Serial.println(voltage,4);
+  Serial.println(rt,3);
+  delay(500);
 }
