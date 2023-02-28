@@ -1,4 +1,6 @@
 (fp_lib_table
   (version 7)
   (lib (name "footprints")(type "KiCad")(uri "${KIPRJMOD}/KiCAD/2023-02-24_18-23-00/footprints.pretty")(options "")(descr ""))
+  (lib (name "footprints_0-33uF")(type "KiCad")(uri "${KIPRJMOD}/KiCAD/2023-02-27_17-28-26_0-33uF_Capacitor/footprints_0-33uF.pretty")(options "")(descr ""))
+  (lib (name "footprints_0-1uF_Capacitor")(type "KiCad")(uri "${KIPRJMOD}/KiCAD/2023-02-27_17-39-08_0-1uF_Capacitor/footprints_0-1uF_Capacitor.pretty")(options "")(descr ""))
 )
