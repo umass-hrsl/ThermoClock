@@ -1,4 +1,4 @@
-21459904668473580
+21464938040892100
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -89617,6 +89617,27 @@ footprints_0-33uF
 CAP_1608_TDK-M
 
 C1608X7R1H334K080AC 
+0
+2
+2
+footprints_100Ohm_Resistor
+RES_RK73G2A_KOA
+
+RK73G2ATTD1000C 
+0
+2
+2
+footprints_100Ohm_Resistor
+RES_RK73G2A_KOA-L
+
+RK73G2ATTD1000C 
+0
+2
+2
+footprints_100Ohm_Resistor
+RES_RK73G2A_KOA-M
+
+RK73G2ATTD1000C 
 0
 2
 2
