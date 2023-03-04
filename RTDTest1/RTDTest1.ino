@@ -23,7 +23,7 @@ double setpoint, input, output; //define pid variables
 #define contrastPin 2
 
 double kp = 27.0; //proportional gain
-double ki = 1.025; //integral gain
+double ki = 1.0; //integral gain
 double kd = 0; //derivative gain
 
 PID myPID(&input, &output, &setpoint,kp,ki,kd, DIRECT); //setup PID
@@ -47,6 +47,7 @@ void setup()
 }
 
 void loop() {
+  float desiredtemp = 37.0; //desired temperature in Celcius 
   if (millis() - now > 200){
   now = millis();
   // Read the temperature once every second
@@ -65,8 +66,12 @@ void loop() {
     //Serial.println(setpoint);
     //Serial.print("Input: ");
     //Serial.println(input);
-    Serial.print("Output: ");
-    Serial.println(output);
+    //Serial.print("Output:");
+    Serial.print(temp);
+    Serial.print(",");
+    Serial.print(desiredtemp);
+    Serial.print(",");
+    Serial.println(status);
     lcd.setCursor(0,1);
     lcd.print(temp);
     
@@ -74,14 +79,14 @@ void loop() {
     double cutoffPWM = mapf(cutoffTemp, -50, 280, 0, 255);
 
     if (error < 1) {
-      myPID.SetTunings(8, 0.6, 0);
+      myPID.SetTunings(3, 0.6, 0);
       status = "cons";
     }
     else{ 
       myPID.SetTunings(kp, ki, kd);
       status ="agg";
     }
-    Serial.println(status);
+    //Serial.println(status);
     myPID.Compute();
     //int pwmsignal = map(output, -50, 280, 0, 255);
   
@@ -89,6 +94,7 @@ void loop() {
     
   
   }
+
 }
 //map function for decimals 
 double mapf(double val, double in_min, double in_max, double out_min, double out_max) {
