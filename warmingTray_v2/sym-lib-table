@@ -3,4 +3,6 @@
   (lib (name "2023-02-27_17-28-26")(type "KiCad")(uri "${KIPRJMOD}/KiCAD/2023-02-27_17-28-26_0-33uF_Capacitor/2023-02-27_17-28-26.kicad_sym")(options "")(descr ""))
   (lib (name "2023-02-27_17-39-08")(type "KiCad")(uri "${KIPRJMOD}/KiCAD/2023-02-27_17-39-08_0-1uF_Capacitor/2023-02-27_17-39-08.kicad_sym")(options "")(descr ""))
   (lib (name "2023-02-24_18-23-00")(type "KiCad")(uri "${KIPRJMOD}/KiCAD/2023-02-24_18-23-00_Resistor/2023-02-24_18-23-00.kicad_sym")(options "")(descr ""))
+  (lib (name "2023-03-06_17-55-25")(type "KiCad")(uri "${KIPRJMOD}/KiCAD/2023-03-06_17-55-25_0805_0-33uF/2023-03-06_17-55-25.kicad_sym")(options "")(descr ""))
+  (lib (name "2023-03-06_18-00-53")(type "KiCad")(uri "${KIPRJMOD}/KiCAD/2023-03-06_18-00-53_0805_0-1uF/2023-03-06_18-00-53.kicad_sym")(options "")(descr ""))
 )
