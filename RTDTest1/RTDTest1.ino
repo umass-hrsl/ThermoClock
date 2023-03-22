@@ -22,9 +22,9 @@ double setpoint, input, output; //define pid variables
 #define pwmPin 31
 #define contrastPin 2
 
-double kp = 10; //proportional gain
-double ki = 0; //integral gain
-double kd = 0; //derivative gain
+double kp = 190; //proportional gain
+double ki = 1.2; //integral gain
+double kd = 15; //derivative gain
 
 PID myPID(&input, &output, &setpoint,kp,ki,kd, DIRECT); //setup PID
 long now = 0; //initialize current time variable
@@ -69,9 +69,9 @@ void loop() {
     Serial.print(",");
     Serial.print(input);
     Serial.print(",");
-    Serial.print(setpoint);
-    Serial.print(",");
-    Serial.println(status);
+    Serial.println(setpoint);
+    //Serial.print(",");
+   //Serial.println(millis());
     lcd.setCursor(0,1);
     lcd.print(temp);
     
