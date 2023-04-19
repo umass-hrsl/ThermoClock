@@ -14,6 +14,7 @@
 // in the following order: CS, DI, DO, CLK
 Adafruit_MAX31865 sensor = Adafruit_MAX31865(10, 11, 12, 13);
 unsigned long lastRead = 0UL;
+unsigned long startTime = millis();
 
 //PID SETUP
 double setpoint, input, output; //define pid variables
@@ -38,7 +39,7 @@ void setup()
   sensor.begin(MAX31865_3WIRE); //using 3-wire RTD sensor
   
   myPID.SetMode(AUTOMATIC);
-  float desiredtemp = 37.0; //desired temperature in Celcius 
+  float desiredtemp = 31.5; //desired temperature in Celcius 
   setpoint = mapf(desiredtemp, -50, 280, 0 ,255); //convert temperature to be between 0 and 255 using limits of sensor
   pinMode(pwmPin, OUTPUT);
 
@@ -46,10 +47,9 @@ void setup()
   analogWrite(contrastPin, 110);
 }
 void loop() {
-  float desiredtemp = 37.0; //desired temperature in Celcius 
+  float desiredtemp = 31.5; //desired temperature in Celcius 
   if (millis() - now > 200){
-  now = millis();
-  // Read the temperature once every second
+    now = millis();
     uint16_t rtd_value = sensor.readRTD();
     float ratio = (float)rtd_value / 32768.0f;
     //Serial.print("RTD Resistance: ");
@@ -60,16 +60,18 @@ void loop() {
     double temp = sensor.temperature(RNOMINAL, RREF);
     input = mapf(temp, -50, 280, 0, 255); //map temp value to value read to PWM pin
     double error = abs(setpoint - input);
+    unsigned long currentTime = millis();
+    unsigned long elapsedTime = currentTime - startTime;
     
     Serial.print(temp);
     Serial.print(",");
     Serial.print(desiredtemp);
     Serial.print(",");
     Serial.print(output);
+    //Serial.print(",");
+    //Serial.print(input);
     Serial.print(",");
-    Serial.print(input);
-    Serial.print(",");
-    Serial.println(setpoint);
+    Serial.println(elapsedTime);
     //Serial.print(",");
    //Serial.println(millis());
     lcd.setCursor(0,1);
