@@ -13,38 +13,30 @@
 // The constructor expects the Arduino pin-numbers
 // in the following order: CS, DI, DO, CLK
 Adafruit_MAX31865 sensor1 = Adafruit_MAX31865(10, 11, 12, 13);
-Adafruit_MAX31865 sensor2 = Adafruit_MAX31865(14, 11, 12, 13);
+Adafruit_MAX31865 sensor2 = Adafruit_MAX31865(2, 11, 12, 13);
 unsigned long lastRead = 0UL;
 unsigned long startTime = millis();
 
 //PID SETUP
-double setpoint, input1, input2, output;  //define pid variables
+double setpoint, input1, input2, output1, output2;  //define pid variables
 
 //pin setup
-#define pwmPin1 31
-#define pwmPin2 33
-#define pwmPin3 35
-#define pwmPin4 37
-#define pwmPin5 39
-#define pwmPin6 41
-#define pwmPin7 43
-#define pwmPin8 45
+#define pwmPin1 45
+#define pwmPin2 27
 #define contrastPin 2
 
 double kp = 190;  //proportional gain
 double ki = 1.2;  //integral gain
 double kd = 15;   //derivative gain
 
-PID myPID1(&input1, &output, &setpoint, kp, ki, kd, DIRECT);
-PID myPID2(&input2, &output, &setpoint, kp, ki, kd, DIRECT);  //setup PID
-long now = 0;                                                 //initialize current time variable
+PID myPID1(&input1, &output1, &setpoint, kp, ki, kd, DIRECT);
+PID myPID2(&input2, &output2, &setpoint, kp, ki, kd, DIRECT);  //setup PID
+long now = 0;//initialize current time variable
 String status = "hello";
-
-LiquidCrystal lcd(3, 4, 5, 6, 7, 8);  //LCD Pin Initialization
 
 void setup() {
   Serial.begin(9600);
-  sensor1.begin(MAX31865_3WIRE);  //using 3-wire RTD sensor
+  sensor1.begin(MAX31865_3WIRE); //using 3-wire RTD sensor
   sensor2.begin(MAX31865_3WIRE);
 
   myPID1.SetMode(AUTOMATIC);
@@ -54,8 +46,6 @@ void setup() {
   pinMode(pwmPin1, OUTPUT);
   pinMode(pwmPin2, OUTPUT);
 
-  lcd.begin(16, 2);
-  analogWrite(contrastPin, 110);
 }
 void loop() {
   float desiredtemp = 31.5;  //desired temperature in Celcius
@@ -83,14 +73,16 @@ void loop() {
     Serial.print(",");
     Serial.print(desiredtemp);
     Serial.print(",");
-    Serial.print(output);
+    Serial.print(output1);
+    Serial.print(",");
+    Serial.print(output2);
     Serial.print(",");
     Serial.println(elapsedTime);
 
     myPID1.Compute();
     myPID2.Compute();
-    analogWrite(pwmPin1, output);
-    analogWrite(pwmPin2, output);
+    analogWrite(pwmPin1, output1);
+    analogWrite(pwmPin2, output2);
   }
 }
 //map function for decimals

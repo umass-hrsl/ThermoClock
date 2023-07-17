@@ -1,6 +1,6 @@
 #include <Adafruit_MAX31865.h>
 #include <PID_v1.h>
-#include <LiquidCrystal.h>
+//#include <LiquidCrystal.h>
 
 //TEMP SENSING
 
@@ -19,9 +19,9 @@ unsigned long startTime = millis();
 //PID SETUP
 double setpoint, input, output; //define pid variables
 
-//pin setup
+//PIN SETUP
 #define pwmPin 31
-#define contrastPin 2
+#define contrastPin 2 //lcd contrast
 
 double kp = 190; //proportional gain
 double ki = 1.2; //integral gain
@@ -31,7 +31,7 @@ PID myPID(&input, &output, &setpoint,kp,ki,kd, DIRECT); //setup PID
 long now = 0; //initialize current time variable
 String status = "hello"; 
 
-LiquidCrystal lcd(3,4,5,6,7,8); //LCD Pin Initialization
+//LiquidCrystal lcd(3,4,5,6,7,8); //LCD Pin Initialization
 
 void setup()
 {
@@ -43,8 +43,8 @@ void setup()
   setpoint = mapf(desiredtemp, -50, 280, 0 ,255); //convert temperature to be between 0 and 255 using limits of sensor
   pinMode(pwmPin, OUTPUT);
 
-  lcd.begin(16,2);
-  analogWrite(contrastPin, 110);
+  //lcd.begin(16,2);
+  //analogWrite(contrastPin, 110);
 }
 void loop() {
   float desiredtemp = 31.5; //desired temperature in Celcius 
@@ -73,9 +73,9 @@ void loop() {
     Serial.print(",");
     Serial.println(elapsedTime);
     //Serial.print(",");
-   //Serial.println(millis());
-    lcd.setCursor(0,1);
-    lcd.print(temp);
+    //Serial.println(millis());
+    //lcd.setCursor(0,1);
+    //lcd.print(temp);
     
 
     // if (error < 2) {
