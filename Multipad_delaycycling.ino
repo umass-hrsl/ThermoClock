@@ -85,15 +85,15 @@ double ki = 1.7; //integral gain
 double kd = 9; //derivative gain
 
 
-PID myPID1(&input1, &output1, &setpoint1,kp,ki,kd, DIRECT); //setup PID  
+PID myPID1(&input1, &output1, &setpoint1,kp,ki,kd, DIRECT); //setup PID1  
 
-PID myPID2(&input2, &output2, &setpoint2,kp,ki,kd, DIRECT); //setup PID  
+PID myPID2(&input2, &output2, &setpoint2,kp,ki,kd, DIRECT); //setup PID2 
 
-PID myPID3(&input3, &output3, &setpoint3,kp,ki,kd, DIRECT); //setup PID  
+PID myPID3(&input3, &output3, &setpoint3,kp,ki,kd, DIRECT); //setup PID3  
 
-PID myPID4(&input4, &output4, &setpoint4,kp,ki,kd, DIRECT); //setup PID  
+PID myPID4(&input4, &output4, &setpoint4,kp,ki,kd, DIRECT); //setup PID4  
 
-PID myPID5(&input5, &output5, &setpoint5,kp,ki,kd, DIRECT); //setup PID  
+PID myPID5(&input5, &output5, &setpoint5,kp,ki,kd, DIRECT); //setup PID5  
 
  
 
@@ -253,13 +253,13 @@ double temp5 = sensor5.temperature(RNOMINAL_5, RREF);
 
 input1 = mapf(temp1, -50, 280, 0, 255); //map temp value to value read to PWM pin  
 
-input2 = mapf(temp2, -50, 280, 0, 255); //map temp value to value read to PWM pin  
+input2 = mapf(temp2, -50, 280, 0, 255);  
 
-input3 = mapf(temp3, -50, 280, 0, 255); //map temp value to value read to PWM pin  
+input3 = mapf(temp3, -50, 280, 0, 255); 
 
 input4 = mapf(temp4, -50, 280, 0, 255);  
 
-input5 = mapf(temp5, -50, 280, 0, 255); //map temp value to value read to PWM pin  
+input5 = mapf(temp5, -50, 280, 0, 255); 
  
 
 //setpoints for PID 
@@ -350,6 +350,7 @@ dataFile.print(",");
 dataFile.print(output5);  
 dataFile.print(",");   
 dataFile.println(now);  
+ 
 //define infromation to be printed on the serial monitor 
 Serial.println("half minute passed");  
 Serial.println(now);  
