@@ -1,2 +1,2 @@
-# BioBot
-Python Code for BioBot Raspberry Pi
+# Bioclockbot
+C++ Code for Bioclockbot on Arduino IDE 
