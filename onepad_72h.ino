@@ -21,7 +21,7 @@
 
 // 100.0 for PT100, 1000.0 for PT1000 
 
-#define RNOMINAL 100.15 
+#define RNOMINAL 100 
 
 // The constructor expects the Arduino pin-numbers for the Adafruit_MAX31865 RTD Amplifier
 
