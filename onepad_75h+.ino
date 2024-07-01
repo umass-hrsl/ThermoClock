@@ -4,12 +4,13 @@
 
 #include <SD.h> 
 
+
+//Arduino IDE sketch for one-pad Bioclockbot temperature regulation system 
+//Author:Kaiyin(Kelly) Zhang (kaiyinzhang@umass.edu) & Dominic Locurto(dlocurto@fas.harvard.edu)
+
+
+// RTD Setup
  
-
-//TEMP SENSING 
-
- 
-
 // The value of the Rref resistor. 
 
 // Use 430.0 for PT100 and 4300.0 for PT1000 
@@ -22,7 +23,7 @@
 
 #define RNOMINAL 100.15 
 
-// The constructor expects the Arduino pin-numbers 
+// The constructor expects the Arduino pin-numbers for the Adafruit_MAX31865 RTD Amplifier
 
 // in the following order: CS, DI, DO, CLK 
 
@@ -34,29 +35,25 @@ unsigned long startTime = millis();
 
  
 
-//PID SETUP 
+//PID Setup 
 
 double setpoint, input, output; //define pid variables 
 
- 
+double kp = 190; //define proportional gain 
 
-//PIN SETUP 
+double ki = 1.2; //define integral gain 
+
+double kd = 15; //define derivative gain 
+
+PID myPID(&input, &output, &setpoint,kp,ki,kd, DIRECT); //setup PID 
+
+
+ 
+//Heating pad Setup
+//The constructor expects the Arduino pin-number output to the bipolar transistor collector end (for the heating pad)
 
 #define pwmPin A8 
 
-#define contrastPin 2 //lcd contrast 
-
- 
-
-double kp = 190; //proportional gain 
-
-double ki = 1.2; //integral gain 
-
-double kd = 15; //derivative gain 
-
- 
-
-PID myPID(&input, &output, &setpoint,kp,ki,kd, DIRECT); //setup PID 
 
 long now = 0; //initialize current time variable 
 
@@ -82,19 +79,23 @@ void setup()
 
   myPID.SetMode(AUTOMATIC); 
 
-  setpoint = mapf(33, -50, 280, 0 ,255); //convert temperature to be between 0 and 255 using limits of sensor 
+  desiredtemp=36;//define initial desired temperature 
 
-  pinMode(pwmPin, OUTPUT); 
-
+  setpoint = mapf(desiredtemp, -50, 280, 0 ,255); //convert temperature to be between 0 and 255 using limits of sensor 
  
 
+  pinMode(pwmPin, OUTPUT); //define pin to the bipolar transistor as output pin
+
+ 
+  //for the system to start operating, the SD card must be initialized successfully
+ 
   Serial.print("Initializing SD card..."); 
 
-  pinMode(52, OUTPUT); 
+  pinMode(4, OUTPUT); //define the proper chip selection (CS) pin to the micro-SD breakout. Pin 4 or 52 on Arduino DUE
 
  
 
-  if (!SD.begin(52)) { 
+  if (!SD.begin(4)) { 
 
     Serial.println("initialization failed!"); 
 
@@ -106,17 +107,17 @@ void setup()
 
  
 
-  dataFile = SD.open("Binder79.txt", FILE_WRITE); 
+  dataFile = SD.open("Binder79.txt", FILE_WRITE); //name the file storing the data for this experiment 
 
 } 
 
 void loop() { 
 
-  dataFile.seek(EOF); 
+  dataFile.seek(EOF); //begin data logging at the end of the file 
 
   if (dataFile) { 
 
-    for (int i = 0; i <= 3000000; i++) { //i <= xxxx would determine the ending time of the protocol, and the data would only be logged once the protocol is ended 
+    for (int i = 0; i <= 3000000; i++) { //i <= xxxx would determine the total time lapse of the experiment. In one pad, i=400 is a minute.
 
     now = millis(); 
 
@@ -125,10 +126,8 @@ void loop() {
     float ratio = rtd; 
 
     ratio /= 32768; 
-
  
-
-    double temp = sensor.temperature(RNOMINAL, RREF); 
+    double temp = sensor.temperature(RNOMINAL, RREF);  //Real-time temperature reading from the RTD is converted numerical temperature (temp)
 
     input = mapf(temp, -50, 280, 0, 255); //map temp value to value read to PWM pin 
 
@@ -136,67 +135,67 @@ void loop() {
 
     unsigned long elapsedTime = currentTime - startTime; 
 
- 
-
     myPID.Compute(); 
 
     //int pwmsignal = map(output, -50, 280, 0, 255); 
 
     analogWrite(pwmPin, output);     
 
-    if (i%200 == 0){ //every i=400 is a minute, customize the i%xxx depending on the frequency of logging 
+    if (i%200 == 0){ //every i=400 is a minute, user can change the i%xxx depending on the desired frequency of data logging (default is i%200, log once every half a minute)
 
+     //define information to be logged into the SD card (user can also choose to log the output and input from the PID computation)
       dataFile.print(temp);  
 
       dataFile.print(","); 
 
       dataFile.println(now); 
 
+     //define infromation to be printed on the serial monitor 
+
       Serial.println("half a minute passed"); 
 
       Serial.println(now); 
 
-      Serial.println(i); 
+      Serial.println(i);   
 
      } 
 
  
 
-    if (i == 288000){ //first set point kicks in, before this the circuit would try to hit 36C and sustains  
+    if (i == 288000){ //first setpoint changes (12h after start), before this the system would try to hit the setup desired temperature and sustains  
 
-      setpoint = mapf(33, -50, 280, 0, 255);  
-
-      Serial.print("daytime"); 
-
-    } 
-
-    if (i == 576000){ //first set point kicks in, before this the circuit would try to hit 36C and sustains  
-
-      setpoint = mapf(33, -50, 280, 0, 255);  
-
-      Serial.print("nighttime"); 
-
-    } 
-
-    if (i == 864000){ //first set point kicks in, before this the circuit would try to hit 36C and sustains  
-
-      setpoint = mapf(33, -50, 280, 0, 255);  
+      setpoint = mapf(38.5, -50, 280, 0, 255);  
 
       Serial.print("daytime"); 
 
     } 
 
-    if (i == 1152000){ //first set point kicks in, before this the circuit would try to hit 36C and sustains  
+    if (i == 576000){ //Second setpoint (24h after start)
 
-      setpoint = mapf(33, -50, 280, 0, 255);  
+      setpoint = mapf(36, -50, 280, 0, 255);  
 
       Serial.print("nighttime"); 
 
     } 
 
-    if (i == 1440000){ //first set point kicks in, before this the circuit would try to hit 36C and sustains  
+    if (i == 864000){ //Third setpoint(36h after start)
 
-      setpoint = mapf(33, -50, 280, 0, 255);  
+      setpoint = mapf(38.5, -50, 280, 0, 255);  
+
+      Serial.print("daytime"); 
+
+    } 
+
+    if (i == 1152000){ //Fourth setpoint (48h after start)
+      setpoint = mapf(36, -50, 280, 0, 255);  
+
+      Serial.print("nighttime"); 
+
+    } 
+
+    if (i == 1440000){ //Firth setpoint (60h after start)
+
+      setpoint = mapf(38.5, -50, 280, 0, 255);  
 
       Serial.print("daytime"); 
 
@@ -204,18 +203,16 @@ void loop() {
 
  
 
-    if (i == 1728000){ //first set point kicks in, before this the circuit would try to hit 36C and sustains  
+    if (i == 1728000){ //Sixth setpoint (72h after start)
 
-      setpoint = mapf(33, -50, 280, 0, 255);  
+      setpoint = mapf(37, -50, 280, 0, 255);  
 
-      Serial.print("nighttime"); 
+      Serial.print("FreeRun"); 
 
     } 
 
+//Information displayed on the serial monitor 
      
-
- 
-
     Serial.print(temp); 
 
     Serial.print(","); 
@@ -226,7 +223,7 @@ void loop() {
 
     Serial.println(millis()); 
 
-    dataFile.flush(); 
+    dataFile.flush(); //enable continuous data logging to the SD card) 
 
  
 
