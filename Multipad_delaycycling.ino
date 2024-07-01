@@ -247,7 +247,6 @@ double temp4 = sensor4.temperature(RNOMINAL_4, RREF);
 
 double temp5 = sensor5.temperature(RNOMINAL_5, RREF);  
 
-//double temp6 = sensor6.temperature(RNOMINAL_6, RREF);  
 
 
  
@@ -308,8 +307,6 @@ myPID4.Compute();
 
 myPID5.Compute();  
 
-//myPID6.Compute();  
-
 
  
 
@@ -324,8 +321,6 @@ analogWrite(pwmPin3, output3);
 analogWrite(pwmPin4, output4);  
 
 analogWrite(pwmPin5, output5);  
-
-//analogWrite(pwmPin6, output6);  
 
 
 
@@ -355,7 +350,7 @@ dataFile.print(",");
 dataFile.print(output5);  
 dataFile.print(",");   
 dataFile.println(now);  
- //define infromation to be printed on the serial monitor 
+//define infromation to be printed on the serial monitor 
 Serial.println("half minute passed");  
 Serial.println(now);  
 Serial.println(i);  
