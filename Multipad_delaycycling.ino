@@ -4,12 +4,15 @@
 
 #include <SD.h>  
 
+//Arduino IDE sketch for multi-pad (default for 5 pads) Bioclockbot temperature regulation system 
+//Author:Kaiyin(Kelly) Zhang (kaiyinzhang@umass.edu) & Dominic Locurto(dlocurto@fas.harvard.edu)
  
+//The example is a program that cycles the 5 pads through the 72h temperature cycling profile(36C<->38.5C) but with a 4h delay from each pad
+//(Pad 1 starts 1h after the start of the program, pad 2 starts 5h after, pad 3 9h after, pad 4 13h after, pad 5 17h after) and before and after the cycling 
+//the cultures are kept at 37C.
+//For similar programs design, user can use the ArduinoHelp.m MATLAB program to write the section where the setpoints are defined.
 
-//Temperature control system with 5 pads 
-//particular version to capsure antiphase entrainment and multiple entrainment schedules
- 
-
+// RTD Setup 
 // Define the RREF value for the RTD Temperature Sensors 
 
 // Use 430.0 for PT100 and 4300.0 for PT1000  
@@ -19,6 +22,8 @@
 // The nominal 0-degrees-C resistance of the sensor  
 
 // 100.0 for PT100, 1000.0 for PT1000  
+
+// user should calibrate the RTD readings to the background incubator temperature by changing the RNOMINAL value (usually 100 +/- 0.5)
 
 #define RNOMINAL 100.35 
 
@@ -31,6 +36,7 @@
 #define RNOMINAL_5 100.1  
 
 //#define RNOMINAL_6 100  
+
 
 
 
@@ -66,52 +72,18 @@ unsigned long startTime = millis();
 
 //PID SETUP  
 
- 
-
 double setpoint1,setpoint2,setpoint3,setpoint4,setpoint5,setpoint6; 
 
 double input1,input2,input3,input4,input5,input6; 
 
 double output1,output2,output3,output4,output5,output6; 
 
- 
+double kp = 300; //proportional gain 
 
- 
+double ki = 1.7; //integral gain
 
-//Define Arduino pin numbers for the heating pads outputs  
+double kd = 9; //derivative gain
 
- 
-
-#define pwmPin1 A8 //Pad1 
-
-#define pwmPin2 A9 //Pad2 
-
-#define pwmPin3 A10 //Pad3 
-
-#define pwmPin4 A11 //Pad4 
-
-#define pwmPin5 A4 //Pad5 
-
-//#define pwmPin6 A5 //Pad6 
-
-
- 
-
- 
-
-double kp = 300; //proportional gain  190 for one pad 
-
- 
-
-double ki = 1.7; //integral gain  1.2 for one pad
-
- 
-
-double kd = 9; //derivative gain  15 for one pad 
-
- 
-
- 
 
 PID myPID1(&input1, &output1, &setpoint1,kp,ki,kd, DIRECT); //setup PID  
 
@@ -123,43 +95,30 @@ PID myPID4(&input4, &output4, &setpoint4,kp,ki,kd, DIRECT); //setup PID
 
 PID myPID5(&input5, &output5, &setpoint5,kp,ki,kd, DIRECT); //setup PID  
 
-//PID myPID6(&input6, &output6, &setpoint6,kp,ki,kd, DIRECT); //setup PID  
-
-
-
  
 
- 
+//Define Arduino pin numbers for the heating pads outputs  
+
+#define pwmPin1 A8 //Pad1 
+
+#define pwmPin2 A9 //Pad2 
+
+#define pwmPin3 A10 //Pad3 
+
+#define pwmPin4 A11 //Pad4 
+
+#define pwmPin5 A4 //Pad5 
+
+
 
 long now = 0; //initialize current time variable  
 
- 
-
- 
-
 //File Object Initialization  
-
- 
 
 File dataFile;  
 
- 
-
-
-
-
-
- 
-
- 
-
 void setup()  
-
- 
-
 {  
-
- 
 
 Serial.begin(9600);  
 
@@ -175,10 +134,7 @@ sensor4.begin(MAX31865_3WIRE);
 
 sensor5.begin(MAX31865_3WIRE);  
 
-//sensor6.begin(MAX31865_3WIRE); 
 
-
- 
 
 myPID1.SetMode(AUTOMATIC);  
 
@@ -189,10 +145,6 @@ myPID3.SetMode(AUTOMATIC);
 myPID4.SetMode(AUTOMATIC);  
 
 myPID5.SetMode(AUTOMATIC);  
-
-//myPID6.SetMode(AUTOMATIC);  
-
-
 
  
 
@@ -206,65 +158,45 @@ pinMode(pwmPin4, OUTPUT);
 
 pinMode(pwmPin5, OUTPUT);  
 
-//pinMode(pwmPin6, OUTPUT);  
+
+
 
  
-
+//SD card needs to be initialized for the system operation 
+ 
 Serial.print("Initializing SD card...");  
 
- 
+pinMode(52, OUTPUT);  //define the CS pin for the SD breakout 
 
-pinMode(52, OUTPUT);  
-
- 
-
- 
 
 if (!SD.begin(52)) {  
 
- 
 
 Serial.println("initialization failed!");  
 
- 
 
 return;  
-
- 
-
 }  
-
- 
 
 Serial.println("initialization done.");  
 
- 
-
- 
-
-dataFile = SD.open("0628.txt", FILE_WRITE);  
-
- 
-
+dataFile = SD.open("0628.txt", FILE_WRITE);  //name the file for the data from the experiment 
 }  
 
  
 
 void loop() {  
 
- 
+ dataFile.seek(EOF); //begin data logging at the end of the file 
 
 if (dataFile) {  
 
- 
 
-for (int i = 0; i <= 870000; i++) {  
+for (int i = 0; i <= 870000; i++) {  //i<=xxxx defines the total timelapse of the program, i=80/minute in a 5-pad system
 
  
 
 now = millis();  
-
- 
 
 uint16_t rtd1 = sensor1.readRTD();  
 
@@ -276,10 +208,6 @@ uint16_t rtd4 = sensor4.readRTD();
 
 uint16_t rtd5 = sensor5.readRTD();  
 
-
- 
-
- 
 
 float ratio1 = rtd1;  
 
@@ -403,7 +331,9 @@ analogWrite(pwmPin5, output5);
 
  
 
-if (i%40 == 0){ //this can change depending on how many pad/sensor pair you have running parallel to each other  
+if (i%40 == 0){ //every i=80 is a minute, user can change the i%xxx depending on the desired frequency of data logging (default is i%40, log once every half a minute)
+
+ //define information to be logged into the SD card (user can also choose to log the output and input from the PID computation)
 dataFile.print(temp1);  
 dataFile.print(",");  
 dataFile.print(temp2);  
@@ -425,6 +355,7 @@ dataFile.print(",");
 dataFile.print(output5);  
 dataFile.print(",");   
 dataFile.println(now);  
+ //define infromation to be printed on the serial monitor 
 Serial.println("half minute passed");  
 Serial.println(now);  
 Serial.println(i);  
@@ -443,14 +374,6 @@ desiredtemp2=35;
 desiredtemp3=35; 
 desiredtemp4=35; 
 desiredtemp5=35; 
-}  
-
-if (i==2400){  
-desiredtemp1=37; 
-desiredtemp2=37; 
-desiredtemp3=37; 
-desiredtemp4=37; 
-desiredtemp5=37; 
 }  
 
 if(i==4800){
@@ -535,10 +458,7 @@ if(i==427200){
 desiredtemp5=37;
 }
 
-
-
-
-
+//Information displayed on the serial monitor 
 
 Serial.print(temp1);  
 Serial.print(",");  
@@ -561,80 +481,9 @@ Serial.print(output4);
 Serial.print(",");  
 Serial.print(output5); 
 Serial.print(",");  
-
-
-
- 
-
- 
-
- 
-
-// Serial.println(output);  
-
- 
-
-// Serial.print(",");  
-
- 
-
-// Serial.print(input);  
-
- 
-
-// Serial.print(",");  
-
- 
-
-// Serial.print(",");  
-
- 
-
 Serial.println(millis());  
-
- 
-
 dataFile.flush();  
 
- 
-
- 
-
-// if (error < 2) {  
-
- 
-
-// myPID.SetTunings(10, 0, 0);  
-
- 
-
-// status = "cons";  
-
- 
-
-// }  
-
- 
-
-// else{  
-
- 
-
-// myPID.SetTunings(kp, ki, kd);  
-
- 
-
-// status ="agg";  
-
- 
-
-// }  
-
- 
-
-//Serial.println(status);  
-
- 
 
 }  
 
