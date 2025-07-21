@@ -2780,7 +2780,7 @@
     )
     (pin "1" (uuid b1b4fd7e-c94b-40fa-a188-41f5ac49ab60))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR010") (unit 1)
         )
@@ -2791,7 +2791,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x07") (at 180.34 38.1 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 063dbe7b-9dfc-4894-bfef-a24c8e0e9862)
-    (property "Reference" "J6" (at 180.34 31.75 90)
+    (property "Reference" "Sensor8" (at 180.34 31.75 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x07" (at 180.34 34.29 90)
@@ -2811,9 +2811,9 @@
     (pin "6" (uuid 67b1503e-49a7-4d47-9402-05a4ff77c522))
     (pin "5" (uuid e2f55a25-9511-4adc-9657-43ce5b9da2b3))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
-          (reference "J6") (unit 1)
+          (reference "Sensor8") (unit 1)
         )
       )
     )
@@ -2836,7 +2836,7 @@
     )
     (pin "1" (uuid 16fa2b71-0e6e-4ae6-8381-866036313f45))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR021") (unit 1)
         )
@@ -2861,7 +2861,7 @@
     )
     (pin "1" (uuid ecd5d77c-9cd3-4117-8efd-9dae34c6874f))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR07") (unit 1)
         )
@@ -2887,7 +2887,7 @@
     (pin "1" (uuid eaff7957-1b2f-4ca6-b1fa-521fcd2e194d))
     (pin "2" (uuid db315dea-d787-445b-8817-b60441c61d3a))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "R2") (unit 1)
         )
@@ -2914,7 +2914,7 @@
     (pin "2" (uuid dc2c3891-d0d9-4b68-acae-39bd8a5661cb))
     (pin "3" (uuid f21eda98-c79e-4f4a-b761-4ee1b33a34da))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "TR8") (unit 1)
         )
@@ -2939,7 +2939,7 @@
     )
     (pin "1" (uuid cfc21a10-ff95-4073-84f2-8766005eb2a5))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR015") (unit 1)
         )
@@ -2965,7 +2965,7 @@
     (pin "1" (uuid 6e7c5bee-710d-40b7-9038-66367c12ccbc))
     (pin "2" (uuid 28900abd-9151-4a7e-819e-559841bfa8fe))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "R5") (unit 1)
         )
@@ -2990,7 +2990,7 @@
     )
     (pin "1" (uuid 7f600870-4f47-4da9-8e5a-4b9556cbd87b))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#FLG0102") (unit 1)
         )
@@ -3015,7 +3015,7 @@
     )
     (pin "1" (uuid 1702a536-d6f7-4707-a74e-436ca0230e8e))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR02") (unit 1)
         )
@@ -3040,7 +3040,7 @@
     )
     (pin "1" (uuid b8bfc6f5-12a9-4b48-8679-2c1176078dab))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR025") (unit 1)
         )
@@ -3067,7 +3067,7 @@
     (pin "2" (uuid 84fdf47b-db24-4013-87ab-ac20e0fcc489))
     (pin "3" (uuid 7ea83bc7-fcfc-4245-954e-130d24a40241))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "5VReg1") (unit 1)
         )
@@ -3093,7 +3093,7 @@
     (pin "1" (uuid 75fbe823-ea9b-48c8-98d4-98308313e5c4))
     (pin "2" (uuid 2e67e86d-4f3f-4b91-8ca5-9aa9c42b6305))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "C1") (unit 1)
         )
@@ -3125,7 +3125,7 @@
     (pin "7" (uuid 4de5b21b-0b9b-46eb-bcd2-cb1b2db4d2f1))
     (pin "8" (uuid e174f933-9560-40aa-9b17-6e2de8a0a5a8))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "P6") (unit 1)
         )
@@ -3150,7 +3150,7 @@
     )
     (pin "1" (uuid 8907625a-b817-44c9-b480-04b630f25db2))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR04") (unit 1)
         )
@@ -3182,7 +3182,7 @@
     (pin "7" (uuid 49ea8e64-00c5-49f1-8953-30773e16a2d3))
     (pin "8" (uuid 26bc02da-8e40-4cf0-a5be-954bdfdbb664))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "PAD1-1") (unit 1)
         )
@@ -3207,7 +3207,7 @@
     )
     (pin "1" (uuid 8bc2ae9b-09b3-4a5f-800f-9b728f55ee41))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR013") (unit 1)
         )
@@ -3234,7 +3234,7 @@
     (pin "2" (uuid 92cbe416-93c0-46c5-b575-5c08e75289e6))
     (pin "3" (uuid 11e5cdd4-a1e1-421d-a9e1-7fc6e59244c5))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "TR6") (unit 1)
         )
@@ -3260,7 +3260,7 @@
     (pin "1" (uuid 40ac942d-0022-4f76-860b-cf166c448777))
     (pin "2" (uuid 090a18b7-cb2e-4b4b-8eb8-5cb7135b611c))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "R7") (unit 1)
         )
@@ -3294,7 +3294,7 @@
     (pin "8" (uuid 20df9de8-729a-4b88-811b-5a172f159b7e))
     (pin "9" (uuid 67edfad0-723e-4645-a970-831a2f5ccacf))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "P5") (unit 1)
         )
@@ -3321,7 +3321,7 @@
     (pin "2" (uuid e12470d5-4b63-423d-ad42-5c497428f4fd))
     (pin "3" (uuid 515c63b3-c9d6-45c4-a6c6-6740187e1189))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "TR5") (unit 1)
         )
@@ -3353,7 +3353,7 @@
     (pin "7" (uuid 366d50f5-d664-40f1-864c-4c9b3e2b5f2c))
     (pin "8" (uuid 87cd11aa-7bbf-4ed6-b48a-2d9d6fe1e823))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "P3") (unit 1)
         )
@@ -3378,7 +3378,7 @@
     )
     (pin "1" (uuid b20b8bb7-be67-47ce-9611-a9828895d5c7))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR0107") (unit 1)
         )
@@ -3389,7 +3389,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x07") (at 119.38 66.04 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3ccd3dac-d484-45a1-9cc7-cb104ea4bb8f)
-    (property "Reference" "J7" (at 119.38 59.69 90)
+    (property "Reference" "Sensor6" (at 119.38 59.69 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x07" (at 119.38 62.23 90)
@@ -3409,9 +3409,9 @@
     (pin "6" (uuid 042bb74d-74ff-4165-aa64-67b779426f39))
     (pin "5" (uuid ebf96a7b-39e6-47ae-bcde-17e97befaf14))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
-          (reference "J7") (unit 1)
+          (reference "Sensor6") (unit 1)
         )
       )
     )
@@ -3434,7 +3434,7 @@
     )
     (pin "1" (uuid ec664d80-6367-49da-9f9e-d86454e10990))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR019") (unit 1)
         )
@@ -3461,7 +3461,7 @@
     (pin "2" (uuid 50cc2080-356c-4786-b373-448e9e56d927))
     (pin "3" (uuid ac132148-66cb-4250-9ade-62721af96d0c))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "TR3") (unit 1)
         )
@@ -3486,7 +3486,7 @@
     )
     (pin "1" (uuid d811f308-5472-40af-b604-52160f83e978))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR018") (unit 1)
         )
@@ -3511,7 +3511,7 @@
     )
     (pin "1" (uuid 446bc7f3-ae8b-4d4d-a400-a1e04dbe346a))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR0108") (unit 1)
         )
@@ -3538,7 +3538,7 @@
     (pin "3" (uuid f7f32713-c140-4873-bd80-a988719575ae))
     (pin "1" (uuid 858b80f9-f044-4507-abcb-1bddae63f995))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "J2") (unit 1)
         )
@@ -3563,7 +3563,7 @@
     )
     (pin "1" (uuid 18bb1f4b-ebdc-4651-9b22-66031beeff0e))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR01") (unit 1)
         )
@@ -3589,7 +3589,7 @@
     (pin "1" (uuid b29e4000-38e7-427a-8ab0-962e08f41890))
     (pin "2" (uuid d429776d-f689-44e8-b4c9-b401b4a2b3dd))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "R6") (unit 1)
         )
@@ -3614,7 +3614,7 @@
     )
     (pin "1" (uuid fc95ca89-75fc-4920-b265-62622c91dfb7))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR012") (unit 1)
         )
@@ -3639,7 +3639,7 @@
     )
     (pin "1" (uuid 3dcbb69f-8bce-4e15-a708-418a12737e78))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR0101") (unit 1)
         )
@@ -3666,7 +3666,7 @@
     (pin "2" (uuid 5c12da8f-9dbc-44db-9e41-61421a5b1e3e))
     (pin "3" (uuid e5a6978e-66c9-497f-abc8-2618ebb3fc46))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "TR1") (unit 1)
         )
@@ -3698,7 +3698,7 @@
     (pin "7" (uuid 9240093d-e925-4b65-8b29-8c69deedaac9))
     (pin "8" (uuid 8a11f6fa-317c-4f68-b55a-fc50ffb8e4a8))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "P7") (unit 1)
         )
@@ -3723,7 +3723,7 @@
     )
     (pin "1" (uuid 108c0d05-121f-45cd-a4d0-a253b5b3316d))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#FLG0101") (unit 1)
         )
@@ -3734,7 +3734,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x07") (at 139.7 66.04 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 66c81bf8-182c-47ac-adaf-32a8e27453b8)
-    (property "Reference" "J8" (at 139.7 59.69 90)
+    (property "Reference" "Sensor3" (at 139.7 59.69 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x07" (at 139.7 62.23 90)
@@ -3754,9 +3754,9 @@
     (pin "6" (uuid d3761022-5009-4a9b-aae8-52888de12e7c))
     (pin "5" (uuid 96385c11-86f5-44d0-9ce8-6f362fa7b5d8))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
-          (reference "J8") (unit 1)
+          (reference "Sensor3") (unit 1)
         )
       )
     )
@@ -3794,7 +3794,7 @@
     (pin "8" (uuid f1b14fbf-07e0-4c42-99b6-9d0ef6ef698a))
     (pin "9" (uuid d818abf3-2c96-4300-ab5c-595d6c134ef7))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "LED1") (unit 1)
         )
@@ -3819,7 +3819,7 @@
     )
     (pin "1" (uuid 711fee1e-217c-4a3f-8ac1-92fae4c517ce))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR05") (unit 1)
         )
@@ -3851,7 +3851,7 @@
     (pin "7" (uuid 98c61275-64ec-4e2d-904f-f3afe765f564))
     (pin "8" (uuid 6e96e020-c694-4cc8-bdba-c5c3e7e51a9e))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "PAD5-1") (unit 1)
         )
@@ -3876,7 +3876,7 @@
     )
     (pin "1" (uuid 2f5cb574-da5e-4dc7-bada-bb0e37842b75))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR09") (unit 1)
         )
@@ -3902,7 +3902,7 @@
     (pin "1" (uuid 7f7a44bd-b083-4806-9c3a-d98d19fec418))
     (pin "2" (uuid 3e7c3a23-a6aa-4c5f-a9c4-71a6a3867444))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "R8") (unit 1)
         )
@@ -3927,7 +3927,7 @@
     )
     (pin "1" (uuid f86ef7d7-3975-4d4d-b2a0-83f073e5d48c))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR08") (unit 1)
         )
@@ -3952,7 +3952,7 @@
     )
     (pin "1" (uuid e0526d95-9120-4f14-9b6c-2405d535d44c))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR03") (unit 1)
         )
@@ -3963,7 +3963,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x07") (at 160.02 38.1 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 87b754d5-76fe-416f-8ed2-047916549cc1)
-    (property "Reference" "J5" (at 160.02 31.75 90)
+    (property "Reference" "Sensor2" (at 160.02 31.75 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x07" (at 160.02 34.29 90)
@@ -3983,9 +3983,9 @@
     (pin "6" (uuid 282d904f-231e-4061-8de4-9d520aeb1855))
     (pin "5" (uuid ef9a828f-19fa-40e1-9ac8-3eea1de9f304))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
-          (reference "J5") (unit 1)
+          (reference "Sensor2") (unit 1)
         )
       )
     )
@@ -4009,7 +4009,7 @@
     (pin "1" (uuid 6b8fac56-fb28-42ba-8c1c-40d714898efb))
     (pin "2" (uuid 73e1adc7-945e-42ff-8042-37002713ff80))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "C2") (unit 1)
         )
@@ -4036,7 +4036,7 @@
     (pin "2" (uuid c58c4203-9fbf-492f-b6e4-d641094de74a))
     (pin "3" (uuid 356f27df-f022-4a64-b689-ce451cfa49a9))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "TR7") (unit 1)
         )
@@ -4068,7 +4068,7 @@
     (pin "7" (uuid f27efa69-418f-4818-a7e4-b718f16bec06))
     (pin "8" (uuid 184de975-ba59-4111-8b89-4018739d058c))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "P2") (unit 1)
         )
@@ -4094,7 +4094,7 @@
     (pin "1" (uuid a320f9cc-32a2-4a91-9772-336f775f4d00))
     (pin "2" (uuid 4e9cc530-fb65-4116-b1c4-4b02fdbd7caf))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "R1") (unit 1)
         )
@@ -4105,7 +4105,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x07") (at 160.02 66.04 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 92df32e0-417e-4cdc-9704-b123f0aabc46)
-    (property "Reference" "J9" (at 160.02 59.69 90)
+    (property "Reference" "Sensor7" (at 160.02 59.69 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x07" (at 160.02 62.23 90)
@@ -4125,9 +4125,9 @@
     (pin "6" (uuid a3590ed0-4d38-4dbe-a91e-9acdb6f7f425))
     (pin "5" (uuid aa251f0f-47a4-41ca-921d-14a6bf795504))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
-          (reference "J9") (unit 1)
+          (reference "Sensor7") (unit 1)
         )
       )
     )
@@ -4150,7 +4150,7 @@
     )
     (pin "1" (uuid f6538445-c60b-4f6c-9008-99fc3c6a911c))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR028") (unit 1)
         )
@@ -4175,7 +4175,7 @@
     )
     (pin "1" (uuid 9dd23184-d654-497b-8475-742cad159f03))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR016") (unit 1)
         )
@@ -4201,7 +4201,7 @@
     (pin "1" (uuid 91ab7d2d-a86a-41c0-8dd5-28467549d36d))
     (pin "2" (uuid 73c851a5-7026-4c9e-9d8c-13acbb9c797b))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "R4") (unit 1)
         )
@@ -4226,7 +4226,7 @@
     )
     (pin "1" (uuid 523d2b81-2ff3-49d5-b81d-8f6c262d96df))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR0106") (unit 1)
         )
@@ -4251,7 +4251,7 @@
     )
     (pin "1" (uuid 3e8fb5d6-3ca8-4734-8f23-08b7a2bbf346))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR0118") (unit 1)
         )
@@ -4276,7 +4276,7 @@
     )
     (pin "1" (uuid eb17f181-d04e-43d6-ab62-5c17d2d04a47))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR023") (unit 1)
         )
@@ -4301,7 +4301,7 @@
     )
     (pin "1" (uuid d2242fee-75bc-4cd7-aa74-1cd7f64543cf))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR0104") (unit 1)
         )
@@ -4312,7 +4312,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x07") (at 139.7 38.1 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b9dd019d-6749-4aee-bca0-7ab1e0ec69ac)
-    (property "Reference" "J4" (at 139.7 31.75 90)
+    (property "Reference" "Sensor5" (at 139.7 31.75 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x07" (at 139.7 34.29 90)
@@ -4332,9 +4332,9 @@
     (pin "6" (uuid 05c96fa9-5a1c-4419-b30b-ab73a8c8b864))
     (pin "5" (uuid c4198654-47fa-4a4c-a57b-40cdb3d649c2))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
-          (reference "J4") (unit 1)
+          (reference "Sensor5") (unit 1)
         )
       )
     )
@@ -4357,7 +4357,7 @@
     )
     (pin "1" (uuid 1b419b6d-0977-41f0-844b-9f2fd81f4fb5))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR0102") (unit 1)
         )
@@ -4383,7 +4383,7 @@
     (pin "1" (uuid 369d07ae-e2b2-4b5f-ba10-2c98dc776dc6))
     (pin "2" (uuid 4d81a741-159f-4288-b609-24eb7311e595))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "J1") (unit 1)
         )
@@ -4408,7 +4408,7 @@
     )
     (pin "1" (uuid 82fb38e2-8187-416a-b298-05ba4c50fb8d))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR0105") (unit 1)
         )
@@ -4435,7 +4435,7 @@
     (pin "2" (uuid 64c66ad0-eb18-4d2d-9cf6-6f335e856657))
     (pin "3" (uuid 5fe068ef-a348-4dde-b693-496984415768))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "TR4") (unit 1)
         )
@@ -4461,7 +4461,7 @@
     (pin "1" (uuid e947698e-f2f9-4f77-ba83-03f0f94d5e5c))
     (pin "2" (uuid b859f75c-a14d-4cfb-94ef-b272b4732837))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "R3") (unit 1)
         )
@@ -4486,7 +4486,7 @@
     )
     (pin "1" (uuid 00eb3bd0-2d80-4d5a-92e5-726a9a0e3d08))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR014") (unit 1)
         )
@@ -4511,7 +4511,7 @@
     )
     (pin "1" (uuid 332a7d2b-e2b5-43ac-9587-215ec62898d2))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR011") (unit 1)
         )
@@ -4536,7 +4536,7 @@
     )
     (pin "1" (uuid c8c6e786-462f-4ff2-834d-757adb78b5dd))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR017") (unit 1)
         )
@@ -4561,7 +4561,7 @@
     )
     (pin "1" (uuid 0bb2dbd8-76a6-48cb-8d55-0b23cdb9c5c2))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR024") (unit 1)
         )
@@ -4586,7 +4586,7 @@
     )
     (pin "1" (uuid 41b418ae-0a37-40fb-97a3-4d87203079cf))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR022") (unit 1)
         )
@@ -4611,7 +4611,7 @@
     )
     (pin "1" (uuid faac53cc-090f-4506-9047-b28910746a29))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR027") (unit 1)
         )
@@ -4636,7 +4636,7 @@
     )
     (pin "1" (uuid 097367df-7cfc-4816-ac55-1ffcb1b3d1fd))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR0119") (unit 1)
         )
@@ -4661,7 +4661,7 @@
     )
     (pin "1" (uuid 9b2aac84-10a6-4ab3-ae76-82021bd1e531))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR0103") (unit 1)
         )
@@ -4672,7 +4672,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x07") (at 119.38 38.1 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e7cfb750-650c-4ebc-96fe-4fe7878f1a2b)
-    (property "Reference" "J3" (at 119.38 31.75 90)
+    (property "Reference" "Sensor1" (at 119.38 31.75 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x07" (at 119.38 34.29 90)
@@ -4692,9 +4692,9 @@
     (pin "6" (uuid 0f78cfce-a48c-4b9f-aca0-80b0278ff25c))
     (pin "5" (uuid 17844c32-052b-4cac-bb79-01452626e54e))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
-          (reference "J3") (unit 1)
+          (reference "Sensor1") (unit 1)
         )
       )
     )
@@ -4717,7 +4717,7 @@
     )
     (pin "1" (uuid aba12042-983e-47b2-ad6b-340740b4c0e0))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#FLG0104") (unit 1)
         )
@@ -4749,7 +4749,7 @@
     (pin "7" (uuid 1d788a40-864a-43db-b1ef-cbc8595d0a10))
     (pin "8" (uuid 13d44d57-e6e9-4fa0-ad51-7bcc9ae28b9c))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "P1") (unit 1)
         )
@@ -4774,7 +4774,7 @@
     )
     (pin "1" (uuid 5f40607f-b3b7-4556-9e74-ea1fc273da04))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR06") (unit 1)
         )
@@ -4834,7 +4834,7 @@
     (pin "8" (uuid 645b2645-f93d-46e1-b20f-05369465ea73))
     (pin "9" (uuid ed890e85-bf35-4c4e-8901-10079f52a172))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "P4") (unit 1)
         )
@@ -4861,7 +4861,7 @@
     (pin "2" (uuid 3db6e5e7-0b4c-43c0-8bcb-e778f2321654))
     (pin "3" (uuid 598c6cf7-6b6d-405b-b51c-eaddb4c78bc5))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "TR2") (unit 1)
         )
@@ -4886,7 +4886,7 @@
     )
     (pin "1" (uuid 56e66f98-3e5c-4246-a2fe-fe254cfd0c6e))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR020") (unit 1)
         )
@@ -4911,7 +4911,7 @@
     )
     (pin "1" (uuid a5c41de9-15ad-4fa4-a1d4-fac7de87716d))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#FLG0103") (unit 1)
         )
@@ -4922,7 +4922,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x07") (at 180.34 66.04 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f7d6acee-63ba-400d-900e-90a770bfd27b)
-    (property "Reference" "J10" (at 180.34 59.69 90)
+    (property "Reference" "Sensor4" (at 180.34 59.69 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x07" (at 180.34 62.23 90)
@@ -4942,9 +4942,9 @@
     (pin "6" (uuid 0e26d7db-0213-4b35-a15f-236bf07be4cb))
     (pin "5" (uuid b95da48c-ea69-4e0d-a8dc-f25f8b467dc1))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
-          (reference "J10") (unit 1)
+          (reference "Sensor4") (unit 1)
         )
       )
     )
@@ -4967,7 +4967,7 @@
     )
     (pin "1" (uuid 95910b06-4552-42bb-bfb4-c78860c1ba2b))
     (instances
-      (project "warmingTray_v2"
+      (project "ThermoClock PCB"
         (path "/3761374c-22ef-4655-8f2e-3ccb2e58d193"
           (reference "#PWR026") (unit 1)
         )

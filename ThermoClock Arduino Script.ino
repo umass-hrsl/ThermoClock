@@ -19,7 +19,7 @@
 Adafruit_MAX31865 sensors[NUM_PADS] = { //RTD pins, {CS, DI, DO, CLK}. Update based on your configuration.
     Adafruit_MAX31865(10, 11, 12, 13), // RTD sensor 1
     Adafruit_MAX31865(8, 11, 12, 13), // RTD sensor 2
-    Adafruit_MAX31865(4, 11, 12, 13), // RTD sensor 3
+    Adafruit_MAX31865(5, 11, 12, 13), // RTD sensor 3
     Adafruit_MAX31865(2, 11, 12, 13), // RTD sensor 4
     Adafruit_MAX31865(9, 11, 12, 13) // RTD sensor 5
 };
