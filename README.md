@@ -1,0 +1,1 @@
+Arduino script, CAD design, PCB design associated with the Manuscript titled "Around the ThermoClock: A Precision Automated Temperature Control System for Ex Vivo Studies" by Kaiyin(Kelly) Zhang, Dominic Locurto, Matthew Belden, Mark A Price, Cathal J Kearney and Meghan E Huber 
